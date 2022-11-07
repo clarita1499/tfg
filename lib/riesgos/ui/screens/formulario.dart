@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/elementos/gradientBack.dart';
+import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
 
 class formulario extends StatelessWidget{
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/elementos/star.dart';
+import 'package:untitled/riesgos/ui/widgets/star.dart';
 
 class review extends StatelessWidget {
   @override

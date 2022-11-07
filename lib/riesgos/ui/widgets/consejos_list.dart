@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/modelo/consejo.dart';
+import 'package:untitled/riesgos/ui/widgets/consejo.dart';
 
 class consejos_list extends StatelessWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/modelo/bienvenida.dart';
-import 'package:untitled/modelo/consultaRL.dart';
-import 'package:untitled/modelo/formulario.dart';
-import 'package:untitled/modelo/senales.dart';
+import 'package:untitled/riesgos/ui/screens/bienvenida.dart';
+import 'package:untitled/riesgos/ui/screens/consultaRL.dart';
+import 'package:untitled/riesgos/ui/screens/formulario.dart';
+import 'package:untitled/riesgos/ui/screens/senales.dart';
 
 class menu_principal extends StatefulWidget{
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/elementos/gradientBack.dart';
-import 'package:untitled/elementos/gradient_logo.dart';
-import 'package:untitled/modelo/review_list.dart';
-import 'package:untitled/modelo/senales.dart';
-import 'package:untitled/modelo/consejos_list.dart';
+import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
+import 'package:untitled/riesgos/ui/widgets/gradient_logo.dart';
+import 'package:untitled/riesgos/ui/widgets/review_list.dart';
+import 'package:untitled/riesgos/ui/screens/senales.dart';
+import 'package:untitled/riesgos/ui/widgets/consejos_list.dart';
 
 class bienvenida extends StatelessWidget {
   //ahora vamos a preparar la clase para cuando tengamos una BD

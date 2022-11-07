@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/modelo/senales.dart';
+import 'package:untitled/riesgos/ui/screens/senales.dart';
 
 class card_image extends StatelessWidget{
   @override

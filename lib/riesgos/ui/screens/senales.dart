@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/elementos/gradientBack.dart';
-import 'package:untitled/modelo/card_image_list.dart';
+import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
+import 'package:untitled/riesgos/ui/widgets/card_image_list.dart';
 
 
 class senales extends StatelessWidget{

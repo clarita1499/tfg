@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/modelo/review.dart';
+import 'package:untitled/riesgos/ui/widgets/review.dart';
 
 class review_list extends StatelessWidget {
   @override
