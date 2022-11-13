@@ -9,11 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:untitled/main.dart';
+import 'package:untitled/users/resources/auth_resources.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    final authresources = auth_resources();
+    await tester.pumpWidget( App(authresources: authresources,));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

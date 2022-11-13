@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:untitled/riesgos/ui/screens/bienvenida.dart';
 import 'package:untitled/riesgos/ui/screens/consultaRL.dart';
 import 'package:untitled/riesgos/ui/screens/formulario.dart';
 import 'package:untitled/riesgos/ui/screens/senales.dart';
+import 'package:untitled/users/ui/screens/perfil.dart';
+import 'package:untitled/riesgos/ui/screens/recomendaciones.dart';
+
 
 class menu_principal extends StatefulWidget{
   @override
   State<StatefulWidget> createState()  {
     return _menu_principalState();
   }
-  //=> _menu_principalState();
 }
 
 class _menu_principalState extends State<menu_principal>{
@@ -20,8 +23,11 @@ class _menu_principalState extends State<menu_principal>{
     bienvenida(),
     formulario(),
     consultarRL("CATEGORÍA", "01", "PANTALLAS DE VISUALIZACIÓN DE DATOS"),
-    senales()
+    recomendaciones(),
+    senales(),
+    perfil()
   ];
+
   void onTapTapped(int index){
     setState(() {
       indexTap = index;
