@@ -1,28 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
-import 'package:untitled/riesgos/ui/widgets/gradient_logo.dart';
-import 'package:untitled/riesgos/ui/widgets/review_list.dart';
-import 'package:untitled/riesgos/ui/screens/senales.dart';
-import 'package:untitled/riesgos/ui/widgets/consejos_list.dart';
-import 'package:untitled/users/bloc/user_bloc.dart';
+
+import 'package:flutter/cupertino.dart';
+
+import '../widgets/consejos_list.dart';
+import '../widgets/gradient_logo.dart';
+import '../widgets/review_list.dart';
 
 class bienvenida extends StatelessWidget {
+  static Widget create(BuildContext context) => bienvenida();
 
-  const bienvenida({Key? key}) : super (key: key);
-
-  static Page pages() =>
-      const MaterialPage(child: bienvenida());
+  const bienvenida({
+    Key? key}) : super (key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
-      children: <Widget>[
-        gradient_logo("INICIO"),
-        details_bienvenida(),
-        list_view_review()
-      ],
-    );
+      return Stack(
+        children: <Widget>[
+          gradient_logo("INICIO"),
+          details_bienvenida(),
+          list_view_review()
+        ],
+      );
   }
 }
 

@@ -1,10 +1,14 @@
 
 import 'package:flutter/material.dart';
-import 'package:untitled/users//model/user.dart';
 
 
 class user_info extends StatelessWidget{
-  user usuario;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+ /* user usuario;
 
   user_info({required this.usuario});
 
@@ -90,4 +94,7 @@ class user_info extends StatelessWidget{
       ),
     );
   }
+  
+  */
+   
 }

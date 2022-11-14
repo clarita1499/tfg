@@ -4,8 +4,9 @@ import 'package:untitled/riesgos/ui/screens/bienvenida.dart';
 import 'package:untitled/riesgos/ui/screens/consultaRL.dart';
 import 'package:untitled/riesgos/ui/screens/formulario.dart';
 import 'package:untitled/riesgos/ui/screens/senales.dart';
-import 'package:untitled/users/ui/screens/perfil.dart';
 import 'package:untitled/riesgos/ui/screens/recomendaciones.dart';
+
+import '../login/ui/screens/perfil.dart';
 
 
 class menu_principal extends StatefulWidget{

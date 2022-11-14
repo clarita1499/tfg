@@ -6,10 +6,14 @@ class button_green extends StatefulWidget{
 
   double width = 0.0;
   double height = 0.0;
-
   final VoidCallback onPressed;
 
-  button_green( {required this.txt ,this.height = 0.0, required this.onPressed, this.width = 0.0});
+  button_green( {
+    Key? key,
+    required this.txt ,
+    this.height = 0.0,
+    required this.onPressed,
+    this.width = 0.0});
 
   @override
   State<StatefulWidget> createState() {
