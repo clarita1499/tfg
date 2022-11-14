@@ -47,6 +47,7 @@ dependencies:
   flow_builder: ^0.0.9
   flutter_hooks: ^0.18.5+1
   page_indicator: ^0.4.1
+  image_picker: ^0.8.6
 
 dev_dependencies:
   flutter_test:
@@ -97,6 +98,9 @@ flutter:
 
   - assets/education.svg
   - assets/fondo.svg
+  - assets/button/entrar.png
+  - assets/button/gmail.png
+  - assets/button/invitado.png
 
   #   - images/a_dot_ham.jpeg
 

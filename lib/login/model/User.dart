@@ -25,6 +25,12 @@ class myUser extends Equatable {
       'image': newImage ?? image,
     };
   }
+  myUser.fromFirebaseMap(Map<String,Object?> data):
+        id = data['id'] as String,
+        name = data['name'] as String,
+        lastname = data['lastname'] as String,
+        age = data['age'] as int,
+        image = data ['image'] as String?;
 
 //https://www.youtube.com/watch?v=wOikvODRQ4s
 }

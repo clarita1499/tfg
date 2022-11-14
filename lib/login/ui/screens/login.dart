@@ -78,8 +78,8 @@ class _login_screen extends State <login_screen> {
               ),
               margin: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 50),
               padding: EdgeInsets.only(left: 20, right: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
+                //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (state is AuthtSigningIn)
                     const Center(child: CircularProgressIndicator()),
@@ -90,12 +90,11 @@ class _login_screen extends State <login_screen> {
                           color: Colors.red,
                           fontSize: 24),
                     ),
-                  const SizedBox(height: 8),
                   Image.asset("assets/logo.png", height: 250),
                   txt_email,
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 3),
                   txt_pswd,
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 20),
                   normal_button(
                       txt: "Entrar",
                       onPressed: () {
@@ -106,19 +105,19 @@ class _login_screen extends State <login_screen> {
                           );
                         }
                       },
-                      imagePath: ""),
+                      imagePath: "assets/button/entrar.png"),
                   const SizedBox(height: 8),
-                  button_green(
-                    txt: "Entrar con gmail",
-                    onPressed: () =>
-                        context.read<AuthCubit>().signInWithGoogle(),
-                  ),
+                  normal_button(
+                      txt: "Entrar con gmail",
+                      onPressed: () =>
+                          context.read<AuthCubit>().signInWithGoogle(),
+                      imagePath: "assets/button/gmail.png"),
                   const SizedBox(height: 8),
                   normal_button(
                       txt: "Entrar como invitado",
                       onPressed: () =>
                           context.read<AuthCubit>().signInAnonymusly(),
-                      imagePath: ""),
+                      imagePath: "assets/button/invitado.png"),
                   const SizedBox(height: 8),
                   link_signup,
                 ],
@@ -132,14 +131,6 @@ class _login_screen extends State <login_screen> {
     );
     }
   }
-
-    /*),),
-    );
-
-  }
-}
-
-     */
 
 
 

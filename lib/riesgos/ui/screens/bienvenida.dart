@@ -1,5 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:untitled/widgets/menu_principal.dart';
 
 import '../widgets/consejos_list.dart';
 import '../widgets/gradient_logo.dart';
@@ -13,13 +15,22 @@ class bienvenida extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return Stack(
-        children: <Widget>[
-          gradient_logo("INICIO"),
-          details_bienvenida(),
-          list_view_review()
-        ],
-      );
+    final txt_bienvenida = Text(
+      "Bienvenid@ a UniTER",
+      style: TextStyle(
+        fontFamily: "Lato",
+        fontSize: 25.0,
+        fontWeight: FontWeight.w900,
+      ),
+      textAlign: TextAlign.left,
+    );
+      return Column(
+            children: <Widget>[
+              gradient_logo("INICIO"),
+              details_bienvenida(),
+              list_view_review()
+            ],
+          );
   }
 }
 
@@ -93,6 +104,7 @@ class list_view_review extends StatelessWidget {
       ],
     );
   }
+
 }
 
 
