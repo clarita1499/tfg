@@ -1,9 +1,14 @@
 
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/login/bloc/AuthCubit.dart';
 import 'package:untitled/login/repository/AuthRepository.dart';
+import 'package:untitled/login/ui/screens/login.dart';
+import 'package:untitled/widgets/menu_principal.dart';
 
 import 'Routes.dart';
 import 'firebase_options.dart';
@@ -38,25 +43,26 @@ class App extends StatelessWidget {
       listener: (context, state) {
         if (state is AuthtSignedOut) {
           _navigatoryKey.currentState?.pushNamedAndRemoveUntil(
-              Routes.login, (route) => false);
+              Routes.login, (r) => false);
         } else if (state is AuthtSignedIn) {
           _navigatoryKey.currentState?.pushNamedAndRemoveUntil(
-              Routes.home, (route) => false);
+              Routes.home, (r) => false);
         }
       },
-      child: App(),
-    );
+      child: const App()
+      );
   }
 
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: _navigatoryKey,
-      title: "TFG CLARA_",
-      onGenerateRoute: Routes.routes,
-    );
+        return MaterialApp(
+          navigatorKey: _navigatoryKey,
+          title: "TFG CLARA_",
+          //onGenerateRoute: Routes.routes,
+          home: menu_principal(),
+        );
   }
 
 }

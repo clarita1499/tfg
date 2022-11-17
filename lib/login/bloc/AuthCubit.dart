@@ -26,7 +26,7 @@ class AuthCubit extends Cubit<AuthState>{
   Future<void> signInWithGoogle() =>
       _signIn(_authRepository.signInWithGoogle()
       );
-  Future<void> signInWithEmailAndPswd(String email, String pswd) =>
+  Future<void> signInWithEmailAndPassword(String email, String pswd) =>
       _signIn(_authRepository.signInWithEmailAndPswd(email, pswd)
       );
   Future<void> createUserWithEmailAndPassword(String email, String password) =>
@@ -69,6 +69,7 @@ class AuthError extends AuthState{
   @override
   List<Object> get props => [message];
 }
+
 //iniciar sesión
 class AuthInitialState extends AuthState{}
 //no ha iniciado sesión

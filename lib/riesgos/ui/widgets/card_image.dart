@@ -2,47 +2,51 @@ import 'package:flutter/material.dart';
 import 'package:untitled/riesgos/ui/screens/senales.dart';
 
 class card_image extends StatelessWidget{
-  @override
-  String pathImage = "";
+  String pathImage = "assets/img/beach.jpeg";
 
   card_image(this.pathImage);
 
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
     final card = Container(
-      height: 350.0,
-      width: 250.0,
+      height: 300.0,
+      width: 200.0,
       margin: EdgeInsets.only(
-        top: 80.0,
-        left: 20.0,
+          top: 70.0,
+          bottom: 10.0,
+          left: 10.0,
       ),
+
       decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(pathImage)
-        ),
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(pathImage)
+          ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        shape: BoxShape.rectangle,
-        //ahora para las sombras
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Colors.black38,
-            blurRadius: 15.0,
-            offset: Offset(0.0,0.7)
-          )
-        ]
+          shape: BoxShape.rectangle,
+          boxShadow: <BoxShadow>[
+            BoxShadow (
+                color:  Colors.black38,
+                blurRadius: 15.0,
+                offset: Offset(0.0, 7.0)
+            )
+          ]
+
       ),
     );
 
     return Stack(
-      alignment: Alignment(0.9,1.1),
+      alignment: Alignment(1.0,1.1),
       children: <Widget>[
         card,
-        boton_ver_mas()
+        //boton_ver_mas()
       ],
     );
   }
 }
+/*
 class boton_ver_mas extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -60,6 +64,7 @@ class _boton_ver_mas extends State<boton_ver_mas>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return FloatingActionButton(
+      heroTag: 'tag2',
       backgroundColor: Color(0xFF11DA53),
       mini: true,
       tooltip: "Ver más información",
@@ -69,4 +74,5 @@ class _boton_ver_mas extends State<boton_ver_mas>{
       ),
     );
   }
-}
+
+ */

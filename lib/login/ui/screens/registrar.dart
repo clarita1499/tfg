@@ -4,7 +4,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled/login/ui/screens/login.dart';
 
+import '../../../Routes.dart';
 import '../../bloc/AuthCubit.dart';
 
 class signup_screen extends StatefulWidget{
@@ -55,21 +57,30 @@ class _signup_screen extends State <signup_screen> {
       ),
       validator: pswdValidator,
     );
-    final button_lognUp = Center(
-      child: ElevatedButton(
-          child: const Text ("Registrar"),
-          style: ElevatedButton.styleFrom(
-              fixedSize: const Size(200,40)),
-          onPressed: () {
-            if (_formKey.currentState?.validate()==true){
-              context.read<AuthCubit>().createUserWithEmailAndPassword(
-                  email_controler.text,
-                  pswd_controler.text
-              );
-            }
+    final button_lognUp = ElevatedButton(
+        child: const Text ("Registrar"),
+        style: ElevatedButton.styleFrom(
+            fixedSize: const Size(100,40)),
+        onPressed: () {
+          if (_formKey.currentState?.validate()==true){
+            context.read<AuthCubit>().createUserWithEmailAndPassword(
+                email_controler.text,
+                pswd_controler.text
+            );
           }
-          ),
+        }
     );
+        final button_atras = ElevatedButton(
+            child: const Text ("Atrás"),
+            style: ElevatedButton.styleFrom(
+                fixedSize: const Size(100,40)),
+            onPressed: () {
+              Navigator.push(context, new MaterialPageRoute(
+                  builder: (context) => new login_screen())
+              );
+            },
+            );
+
    return Scaffold(
      body: BlocBuilder<AuthCubit,AuthState>(
        builder: (_,state){
@@ -93,7 +104,14 @@ class _signup_screen extends State <signup_screen> {
                SizedBox(height: 8),
                txt2_pswd,
                SizedBox(height: 8),
-               button_lognUp,
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   button_lognUp,
+                   SizedBox(height: 8),
+                   button_atras,
+                 ],
+               ),
              ],
          ),
          ),

@@ -23,7 +23,7 @@ class normal_button extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Material(
-      color: Colors.white,
+      color: Colors.white60,
       elevation: 3,
       borderRadius: BorderRadius.all(Radius.circular(20.0)),
       child: InkWell(

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../riesgos/model/Consejo.dart';
 import '../model/User.dart';
 import '../repository/UserRepositoryBase.dart';
 
@@ -22,7 +23,7 @@ class UserCubit extends Cubit<UserState> {
   //para obtener el usuario
   Future<void> getMyUser() async {
     emit(UserLoadingState());
-    _user = (await _userRepository.getMyUser()) ?? myUser('', '', '', 0);
+    _user = (await _userRepository.getMyUser()) ?? myUser('', '', '','', 0,[],[]);
     emit(UserReadyState(_user, _pickedImage));
   }
 
@@ -30,9 +31,12 @@ class UserCubit extends Cubit<UserState> {
       String uid,
       String name,
       String lastName,
-      int age
+      int age,
+      String email,
+      List<myConsejo> consejoMy,
+      List<myConsejo> consejoFavs,
       ) async {
-    _user = myUser(uid, name, lastName, age, image: _user.image);
+    _user = myUser(uid, name, lastName, email,age, image: _user.image,consejoMy,consejoFavs);
     emit(UserReadyState(_user, _pickedImage, isSaving: true));
 
     await Future.delayed(Duration(seconds: 3));

@@ -8,7 +8,7 @@ class AuthRepository extends AuthRepositoryBase{
 
   //convertir un usuario de firebase a uno de auth user
   AuthUser ? _userFromFirebase (User? user) =>
-      user == null ? null : AuthUser(user.uid, user.email,user.photoURL);
+      user == null ? null : AuthUser(user.uid);
   @override
   // TODO: implement onAuthStateChanged
   Stream<AuthUser?> get onAuthStateChanged =>

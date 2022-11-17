@@ -21,6 +21,7 @@ class circle_button extends StatefulWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: FloatingActionButton(
+          heroTag: 'tag1',
           backgroundColor: widget.color,
           mini: widget.mini,
           onPressed: widget.onPressed,

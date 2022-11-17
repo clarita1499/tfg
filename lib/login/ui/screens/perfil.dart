@@ -10,27 +10,45 @@ import 'package:untitled/login/bloc/UserCubit.dart';
 import 'package:untitled/widgets/normal_button.dart';
 
 import '../../bloc/AuthCubit.dart';
+import '../../bloc/UserCubit.dart';
+
 import '../../model/User.dart';
 import '../../repository/UserRepository.dart';
 
 class perfil extends StatelessWidget {
   static Widget create(BuildContext context){
-    return BlocProvider(create: (_) => UserCubit(UserRepository())..getMyUser(),
-    child : perfil(),
+    return BlocProvider(
+      create: (_) => UserCubit(UserRepository())..getMyUser(),
+      child :  perfil(),
     );
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("PERFIL"),
-          actions: [
-            IconButton(
-              onPressed: () => context.read<AuthCubit>().signOut(),
-              icon: const Icon(Icons.logout),
-            ),
-          ],
-        ),
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Logout',
+            onPressed: () => context.read<AuthCubit>().signOut(),
+          )
+        ],
+      ),
+      body: BlocBuilder<UserCubit, UserState>(
+        builder: (_, state) {
+          if (state is UserReadyState) {
+            return _UserSection(
+              user: state.user,
+              pickedImage: state.pickedImage,
+              isSaving: state.isSaving,
+            );
+          }
+          return const Center(child: CircularProgressIndicator());
+        },
+      ),
+    );
+    /*
         body:BlocBuilder<UserCubit,UserState>(
           builder: (_,state) {
             if(state is UserReadyState){
@@ -40,10 +58,12 @@ class perfil extends StatelessWidget {
                 isSaving: state.isSaving,
               );
             }
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           },
         ),
     );
+
+     */
   }
 }
 
@@ -63,6 +83,7 @@ class _UserSection extends StatefulWidget{
   final _nameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _ageController = TextEditingController();
+  final _emailController = TextEditingController();
   final picker = ImagePicker();
 
   @override
@@ -91,9 +112,10 @@ class _UserSection extends StatefulWidget{
           children: [
             GestureDetector(
               onTap: () async{
+                final myUserCubit = context.read<UserCubit>();
                 final pickedImage = await picker.pickImage(source: ImageSource.gallery);
                 if(pickedImage!=null)
-                  context.read<UserCubit>().setImage(File(pickedImage.path));
+                  myUserCubit.setImage(File(pickedImage.path));
                 },
                 child : Center(
                     child: ClipOval(
@@ -107,7 +129,7 @@ class _UserSection extends StatefulWidget{
             ),
             SizedBox(height: 8),
             BlocBuilder<AuthCubit,AuthState>(
-              buildWhen: (_, current) => current is AuthtSignedIn,
+                buildWhen: (_, current) => current is AuthtSignedIn,
                 builder: (_,state){
                 return Center(
                   child: Text('UID ${(state as AuthtSignedIn).user.uid}'),
@@ -127,6 +149,12 @@ class _UserSection extends StatefulWidget{
             ),
             SizedBox(height: 8,),
             TextField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                  labelText: 'email'),
+            ),
+            SizedBox(height: 8,),
+            TextField(
               controller: _ageController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
@@ -136,14 +164,17 @@ class _UserSection extends StatefulWidget{
             Stack(
               children: [
                 ElevatedButton(
-                    child: Text("Guardar"),
                     onPressed: widget.isSaving ? null : () {
                       context.read<UserCubit>().saveMyUser(
                           (context.read<AuthCubit>().state as AuthtSignedIn).user.uid,
                           _nameController.text,
                           _lastNameController.text,
-                          int.tryParse(_ageController.text) ?? 0,);
+                          int.tryParse(_ageController.text) ?? 0,
+                          _emailController.text,
+                      [],[]
+                      );
                       },
+                  child: const Text('Guardar'),
                 ),
                 if(widget.isSaving)CircularProgressIndicator(),
               ],

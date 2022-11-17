@@ -1,11 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:untitled/riesgos/ui/screens/bienvenida.dart';
 import 'package:untitled/riesgos/ui/screens/consultaRL.dart';
-import 'package:untitled/riesgos/ui/screens/formulario.dart';
+import 'package:untitled/riesgos/ui/screens/Anadir.dart';
 import 'package:untitled/riesgos/ui/screens/senales.dart';
 import 'package:untitled/riesgos/ui/screens/recomendaciones.dart';
 
+import '../Routes.dart';
 import '../login/ui/screens/perfil.dart';
 
 
@@ -22,7 +23,7 @@ class _menu_principalState extends State<menu_principal>{
 
   final List <Widget> widgetsChildren = [
     bienvenida(),
-    formulario(),
+    anadir(),
     consultarRL("CATEGORÍA", "01", "PANTALLAS DE VISUALIZACIÓN DE DATOS"),
     recomendaciones(),
     senales(),
@@ -40,7 +41,7 @@ class _menu_principalState extends State<menu_principal>{
       body: widgetsChildren[indexTap],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-            canvasColor: Colors.grey,
+            canvasColor: Color(0xFF82B1FF),
             primaryColor: Colors.purple
         ),
         child: BottomNavigationBar (
@@ -52,8 +53,8 @@ class _menu_principalState extends State<menu_principal>{
                 label: "Bienvenida"
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.task_alt),
-                label: "Formulario"
+                icon: Icon(Icons.add_circle),
+                label: "Añadir"
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.search),
@@ -111,6 +112,88 @@ class _menu_principalState extends State<menu_principal>{
     );
   }
 }
+
+
+
+/*
+class menu_principal extends {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      bottomNavigationBar: CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: "Bienvenida",
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.task_alt),
+                  label: "Formulario"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: "Busqueda PRL"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.recommend),
+                  label: "Recomendaciones"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.dataset),
+                  label: "Señales"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: "Perfil"
+              ),
+            ],
+        ),
+
+        tabBuilder: (BuildContext context, int index) {
+          switch (index) {
+            case 0:
+              return CupertinoTabView(
+                builder: (BuildContext context) => bienvenida(),
+              );
+              break;
+            case 1:
+              return CupertinoTabView(
+                builder: (BuildContext context) => formulario(),
+              );
+              break;
+            case 2:
+              return CupertinoTabView(
+                builder: (BuildContext context) => consultarRL("CATEGORÍA", "01", "PANTALLAS DE VISUALIZACIÓN DE DATOS"),
+              );
+              break;
+            case 3:
+              return CupertinoTabView(
+                builder: (BuildContext context) => recomendaciones(),
+              );
+              break;
+            case 3:
+              return CupertinoTabView(
+                builder: (BuildContext context) => senales(),
+              );
+              break;
+            case 4:
+              return CupertinoTabView(
+                builder: (BuildContext context) => perfil(),
+              );
+              break;
+            default:
+              throw Exception("Ruta no encontrada");
+          }
+
+        },
+      ),
+    );
+  }
+
+ */
+
 
 
 /*

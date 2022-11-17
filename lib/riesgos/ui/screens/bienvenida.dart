@@ -1,10 +1,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/riesgos/ui/widgets/card_image.dart';
+import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
 import 'package:untitled/widgets/menu_principal.dart';
-
 import '../widgets/consejos_list.dart';
-import '../widgets/gradient_logo.dart';
+import '../widgets/headerAppBar.dart';
 import '../widgets/review_list.dart';
 
 class bienvenida extends StatelessWidget {
@@ -15,97 +16,128 @@ class bienvenida extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final txt_bienvenida = Text(
-      "Bienvenid@ a UniTER",
-      style: TextStyle(
-        fontFamily: "Lato",
-        fontSize: 25.0,
-        fontWeight: FontWeight.w900,
-      ),
-      textAlign: TextAlign.left,
-    );
-      return Column(
-            children: <Widget>[
-              gradient_logo("INICIO"),
-              details_bienvenida(),
-              list_view_review()
-            ],
-          );
-  }
-}
+    String texto = "HOLA ESTE TEXTO LO TENGO QUE HACER";
 
-
-class description extends StatelessWidget {
-  String txt_bienvenida = "HOLA ESTE TEXTO LO TENGO QUE HACER";
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
+    final titulo_bienvenida  = Container(
       margin: new EdgeInsets.only(
           top: 20.0,
           left: 20.0,
           right: 20.0
-      ),
-      child: new Text(
-        txt_bienvenida,
-        style: const TextStyle(
-          fontFamily: "Lato",
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-          color: Color(0xFF56575a),
-        ),
-      ),
-    );
-  }
-}
 
-class titulo_bienvenida extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return  Container(
-    margin: EdgeInsets.only(
-        top: 325.0,
-        left: 20.0,
-        right: 20.0
-    ),
+      ),
       child: new Text(
         "Bienvenid@ a UniTER",
-        style: TextStyle(
-          fontFamily: "Lato",
-          fontSize: 25.0,
-          fontWeight: FontWeight.w900,
+        style: const TextStyle(
+            fontFamily: "Lato",
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF56575a)
         ),
-        textAlign: TextAlign.left,
+        textAlign: TextAlign.center,
       ),
     );
-  }
-}
 
-class details_bienvenida extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        titulo_bienvenida(),
-        description()
-      ],
+    final txt_bienvenida  = Container(
+      margin: new EdgeInsets.only(
+          top: 20.0,
+          left: 20.0,
+          right: 20.0
+
+      ),
+      child: new Text(
+        texto,
+        style: const TextStyle(
+            fontFamily: "Lato",
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF56575a)
+        ),
+      ),
+    );
+    final titulo_consejos = Container(
+        margin: EdgeInsets.only(
+            top: 20.0,
+            left: 10.0,
+            right: 20.0
+        ),
+        child: Text(
+            "Consejos:",
+            style: TextStyle(
+              decoration: TextDecoration.underline,
+              fontFamily: "Lato",
+              fontSize: 20.0,
+              fontWeight: FontWeight.w900, //negrita
+            ),
+        ),
+      alignment: Alignment.topLeft,
+    );
+
+    final details = Container(
+      padding: EdgeInsets.all(10.0),
+      child : Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          titulo_bienvenida,
+          txt_bienvenida,
+          titulo_consejos
+    ]
+      ),
+    );
+
+
+    //QUIERO HACER QUE EL GRADIENTE SE QUEDE QUIETO, PERO ESQ SI HAGO ESO NO ME SALE EL TXT, LO HARÍA CON UN STACK, TENGO QUE SEGUIR PROBANDO
+
+    return Scaffold(
+      body: ListView(
+            children: <Widget>[
+              HeaderAppBar(),
+              details,
+              consejos_list(),
+              review_list(),
+            ],
+          ),
+         //HeaderAppBar()
+        //],
+     // ),
     );
   }
-}
-
-class list_view_review extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return   ListView(
-      children: <Widget>[
-        consejos_list(),
-        review_list(),
-      ],
+    /*MaterialApp(
+      home: Padding(
+        padding:EdgeInsets.all(20.0),
+    child :Stack(
+    children: <Widget>[
+    ListView(
+    children: <Widget>[
+    details,
+    consejos_list(),
+    review_list(),
+    ],
+    ),
+    HeaderAppBar()
+    ],
+    ),
+    ),
     );
   }
 
-}
+     */
 
+    /*Padding(
+      padding:EdgeInsets.all(20.0),
+    child :Stack(
+      children: <Widget>[
+        ListView(
+          children: <Widget>[
+            details,
+            consejos_list(),
+            review_list(),
+          ],
+        ),
+        HeaderAppBar()
+      ],
+    ),
+    );
 
+     */
+  }
 

@@ -7,7 +7,7 @@ class AuthUser extends Equatable{
   final String? email;
   final String? photo;
 
-  AuthUser(this.uid, this.email,this.photo);
+  AuthUser(this.uid,{this.email,this.photo});
 
   List<Object> get props => [uid];
 }

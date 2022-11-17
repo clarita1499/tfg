@@ -21,6 +21,7 @@ class card_image_list extends StatelessWidget{
         ],
       ),
     );
+    /*
     final aviso =  Container(
       height: 200.0,
       child: ListView (
@@ -51,12 +52,41 @@ class card_image_list extends StatelessWidget{
         ],
       ),
     );
+     final teruel =  Container(
+      height: 200.0,
+      child: ListView (
+        padding: EdgeInsets.all(30.0),
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          card_image("assets/prohibicion/prohibido_animales.png)"),
+          card_image("assets/prohibicion/prohibido_apagar_agua.png"),
+          card_image("assets/prohibicion/prohibido_encender_fuego.jpg"),
+          card_image("assets/prohibicion/prohibido_fogatas.jpg"),
+          card_image("assets/prohibicion/prohibido_fumar.png"),
+          card_image("assets/prohibicion/prohibido_no fotos.jpg"),
+          card_image("assets/prohibicion/prohibido_solo_personal_autorizado.jpg")
+        ],
+      ),
+    );
     return Column(
       children: <Widget>[
         prohibido,
         aviso,
         salvamento
       ],
+    );
+
+     */
+    return Container(
+      height: 300.0,
+      child: ListView (
+        padding: EdgeInsets.all(30.0),
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          card_image("assets/poli.jpeg"),
+          card_image("assets/exteriores.jpg"),
+        ],
+      ),
     );
   }
 }

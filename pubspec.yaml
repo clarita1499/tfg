@@ -48,6 +48,10 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   page_indicator: ^0.4.1
   image_picker: ^0.8.6
+  build_runner: ^2.3.2
+  json_serializable: ^6.5.4
+  http: ^0.13.5
+  json_annotation: ^4.7.0
 
 dev_dependencies:
   flutter_test:
@@ -101,6 +105,8 @@ flutter:
   - assets/button/entrar.png
   - assets/button/gmail.png
   - assets/button/invitado.png
+  - assets/poli.jpeg
+  - assets/exteriores.jpg
 
   #   - images/a_dot_ham.jpeg
 

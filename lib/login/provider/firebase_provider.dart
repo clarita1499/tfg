@@ -1,3 +1,4 @@
+
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,5 +37,8 @@ class FirebaseProvider{
       final url = await storageRef.getDownloadURL();
       await ref.set(user.toFirebaseMap(newImage: url),SetOptions(merge:true)); //para obtener la url de la imagen, encontrado en storage
     }
+    
   }
 }
+
+
