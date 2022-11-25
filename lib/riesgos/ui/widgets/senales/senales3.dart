@@ -20,23 +20,23 @@ class senales3 extends StatelessWidget {
       children: [
         image_senales(
             "assets/riesgo/aviso_escaleras.png",
-                () {}
+              //  () {}
         ),
         image_senales(
             "assets/riesgo/aviso_general.png",
-                () {}
+            //    () {}
         ),
         image_senales(
             "assets/riesgo/aviso_peligro.jpg",
-                () {}
+           //     () {}
         ),
         image_senales(
             "assets/riesgo/riesgo_electrico.png",
-                () {}
+           //     () {}
         ),
         image_senales(
             "assets/riesgo/riesgo_tropezar.jpg",
-                () {}
+            //    () {}
         ),
       ],
     );
@@ -44,11 +44,12 @@ class senales3 extends StatelessWidget {
       children: [
         image_senales(
             "assets/riesgo/suelo_resbaladizo.jpg",
-                () {}
+           //     () {}
         ),
         image_senales(
             "assets/riesgo/sustancias_inflamables.png",
-                () {})
+        //      () {})
+        ),
       ],
     );
 

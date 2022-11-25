@@ -20,19 +20,19 @@ class senales2 extends StatelessWidget {
       children: [
         image_senales(
             "assets/salvamento/aviso_extintor.jpg",
-                () {}
+             //   () {}
         ),
         image_senales(
             "assets/salvamento/escalera_emergencia.png",
-                () {}
+            //    () {}
         ),
         image_senales(
             "assets/salvamento/salida_emergencia.jpg",
-                () {}
+           //     () {}
         ),
         image_senales(
             "assets/salvamento/salida_exit.jpg",
-                () {}
+           //     () {}
         ),
       ],
     );

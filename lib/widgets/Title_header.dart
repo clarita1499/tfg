@@ -5,11 +5,14 @@ class TitleHeader extends StatelessWidget {
 
   final String title;
 
-  TitleHeader(Key key, this.title);
+  TitleHeader(this.title);
 
   @override
   Widget build(BuildContext context) {
-    double screenWidht = MediaQuery.of(context).size.width;
+    double screenWidht = MediaQuery
+        .of(context)
+        .size
+        .width;
     return Text(
       title,
       style: TextStyle(
@@ -20,3 +23,4 @@ class TitleHeader extends StatelessWidget {
       ),
     );
   }
+}

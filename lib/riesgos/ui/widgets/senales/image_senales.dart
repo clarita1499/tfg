@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class image_senales extends StatelessWidget{
   @override
   final String imagePath;
-  final VoidCallback onPressed;
+ // final VoidCallback onPressed;
 
-  image_senales(this.imagePath, this.onPressed);
+  image_senales(this.imagePath);
 
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -15,7 +15,27 @@ class image_senales extends StatelessWidget{
       child:  ClipOval(
         child: Material(
           child: InkWell(
-            onTap: onPressed,
+            onTap:  () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    height: 300.0,
+                    color: Colors.white60,
+                    child: Column(
+                      children: [
+                        Text(
+                            "TITULO"
+                        ),
+                        Text(
+                            "DESCRIPCIÓN"
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
             child: Image.asset(imagePath),
           ),
         ),

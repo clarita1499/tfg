@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
 
 class consultarRL extends StatelessWidget {
-  String categoria;
-  String cod_riesgo;
-  String nombre_riesgo;
+  int type;
+  String id;
+  String titulo;
+  String description;
  // String descripcion_riesgo;
 
-  consultarRL(this.categoria, this.cod_riesgo, this.nombre_riesgo);
+  consultarRL(this.type, this.id, this.titulo, this.description);
 
   @override
   Widget build(BuildContext context) {
-    final txt_categoria = Container(
+    final txt_type = Container(
       margin: EdgeInsets.only(
         top: 50,
         right: 3.0
       ),
       child: Text(
-        categoria,
+        type.toString(),
         style: TextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.w900
@@ -34,7 +36,7 @@ class consultarRL extends StatelessWidget {
                 right: 20.0
             ),
             child: Text(
-              cod_riesgo,
+              id,
               style: TextStyle(
                 fontSize: 16.0,
               ),
@@ -45,7 +47,7 @@ class consultarRL extends StatelessWidget {
             children: <Widget>[
               Container (
                 child: Text(
-                  nombre_riesgo,
+                  titulo,
                   style: TextStyle(
                     fontSize: 14.0,
                   ),
@@ -56,6 +58,11 @@ class consultarRL extends StatelessWidget {
           ),
         ]
     );
-    return txt_riesgo;
+    return Column(
+      children: [
+        gradientBack("Búsqueda de riesgos"),
+        txt_riesgo
+      ],
+    );
   }
 }

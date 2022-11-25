@@ -2,21 +2,15 @@ import 'package:flutter/material.dart';
 
 class button_inkWell extends StatelessWidget{
   @override
-  String button_txt = "BUSCAR";
+  final String button_txt;
+  final VoidCallback onPressed;
 
-  button_inkWell(this.button_txt);
+  button_inkWell({required this.button_txt, required this.onPressed});
 
   Widget build(BuildContext context) {
     // TODO: implement build
    return InkWell(
-     onTap: () {
-       ScaffoldMessenger.of(context).showSnackBar(
-           SnackBar(
-               content: Text("navegando.."),
-             //aquí tendre que poner un switch case según los botones que haya
-           ),
-       );
-     },
+     onTap: onPressed,
      child: Container(
        margin: EdgeInsets.only(
          top: 30.0,

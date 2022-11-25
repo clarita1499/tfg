@@ -1,19 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-import '../../User/model/User.dart';
-
-
-class MyConsejo extends Equatable {
+class myRiesgo extends Equatable {
   final String id;
   final String titulo;
   final String description;
-  final int? likes;
-  final String? image;
-  final MyUser? userOwner;
+  final int type;
 
 
-  MyConsejo(this.id, this.titulo, this.description, {this.image,this.likes,this.userOwner});
-
+  myRiesgo(this.id, this.titulo, this.description, this.type);
 
   List<Object?> get props => [id];
 
@@ -23,18 +17,14 @@ class MyConsejo extends Equatable {
       'id': id,
       'titulo': titulo,
       'description': description,
-      'image': newImage ?? image,
-      'likes' : 0 ?? likes,
-      'userOwner' : userOwner,
+      'type' : type,
     };
   }
-  MyConsejo.fromFirebaseMap(Map<String,Object?> data):
+  myRiesgo.fromFirebaseMap(Map<String,Object?> data):
         id = data['id'] as String,
         titulo = data['titulo'] as String,
         description = data['description'] as String,
-        image = data ['image'] as String?,
-        likes = data['likes'] as int?,
-        userOwner = data['userOwner'] as MyUser;
+        type = data['likes'] as int;
 
 //https://www.youtube.com/watch?v=wOikvODRQ4s
 }

@@ -6,36 +6,61 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:untitled/login/bloc/UserCubit.dart';
+import 'package:untitled/User/bloc/auth_cubit.dart';
+
 import 'package:untitled/widgets/normal_button.dart';
 
-import '../../bloc/AuthCubit.dart';
-import '../../bloc/UserCubit.dart';
+
 
 import '../../model/User.dart';
-import '../../repository/UserRepository.dart';
+import 'login.dart';
 
-class perfil extends StatelessWidget {
+
+
+class perfil_screen extends StatelessWidget {
+  const perfil_screen({Key? key}) : super(key: key);
+
+  static Widget create(BuildContext context) => const perfil_screen();
+
+  /*
   static Widget create(BuildContext context){
     return BlocProvider(
       create: (_) => UserCubit(UserRepository())..getMyUser(),
-      child :  perfil(),
+      child :  perfil_screen(),
     );
-  }
+
+   */
+
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    // return Text("hola");
+
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Logout',
-            onPressed: () => context.read<AuthCubit>().signOut(),
+              icon: const Icon(Icons.logout),
+              tooltip: 'Salir',
+              onPressed: () =>
+                 // context.read<AuthCubit>().signOut(),
+
+                Navigator.push(context, new MaterialPageRoute(
+                    builder: (context) => new login_screen())
+
+
           )
+          ),
         ],
       ),
+    );
+  }
+}
+
+     /*
       body: BlocBuilder<UserCubit, UserState>(
+
         builder: (_, state) {
           if (state is UserReadyState) {
             return _UserSection(
@@ -66,20 +91,22 @@ class perfil extends StatelessWidget {
      */
   }
 }
+/*
 
+      */
 class _UserSection extends StatefulWidget{
   final myUser? user;
   final File? pickedImage;
   final bool isSaving;
 
 
-  _UserSection({this.user, this.pickedImage, this.isSaving = false});
+  const _UserSection({this.user, this.pickedImage, this.isSaving = false});
 
   @override
-  State<StatefulWidget> createState() => _UserSectionState();
-  }
+  _UserSectionState createState() => _UserSectionState();
+}
   
-  class _UserSectionState extends State<_UserSection> {
+class _UserSectionState extends State<_UserSection> {
   final _nameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _ageController = TextEditingController();
@@ -119,7 +146,7 @@ class _UserSection extends StatefulWidget{
                 },
                 child : Center(
                     child: ClipOval(
-                      child: Container(
+                      child: SizedBox(
                         width: 150,
                         height: 150,
                         child: image,
@@ -129,7 +156,7 @@ class _UserSection extends StatefulWidget{
             ),
             SizedBox(height: 8),
             BlocBuilder<AuthCubit,AuthState>(
-                buildWhen: (_, current) => current is AuthtSignedIn,
+                //buildWhen: (_, current) => current is AuthtSignedIn,
                 builder: (_,state){
                 return Center(
                   child: Text('UID ${(state as AuthtSignedIn).user.uid}'),
@@ -185,7 +212,10 @@ class _UserSection extends StatefulWidget{
     );
   }
 }
+
+ */
   
+
 
 
 

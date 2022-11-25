@@ -4,10 +4,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:untitled/login/ui/screens/login.dart';
 
-import '../../../Routes.dart';
-import '../../bloc/AuthCubit.dart';
+
+import '../../bloc/auth_cubit.dart';
+import 'login.dart';
 
 class signup_screen extends StatefulWidget{
   static Widget create(BuildContext context) => signup_screen();
@@ -90,7 +90,7 @@ class _signup_screen extends State <signup_screen> {
              padding:  const EdgeInsets.all(16.0),
            child: Column(
              children: [
-               if (state is AuthtSigningIn) Center(child: CircularProgressIndicator()),
+               if (state is AuthSigningIn) Center(child: CircularProgressIndicator()),
                if (state is AuthError)
                  Text(state.message,
                    style: TextStyle(

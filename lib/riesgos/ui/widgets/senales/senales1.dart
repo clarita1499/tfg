@@ -20,25 +20,25 @@ class senales1 extends StatelessWidget{
       children: [
         image_senales(
             "assets/prohibicion/prohibido_animales.png",
-                () {
+              //  () {
 
-                }
+               // }
         ),
         image_senales(
             "assets/prohibicion/prohibido_apagar_agua.png",
-                () { }
+           //     () { }
         ),
         image_senales(
             "assets/prohibicion/prohibido_encender_fuego.jpg",
-                () { }
+            //    () { }
         ),
         image_senales(
             "assets/prohibicion/prohibido_fogatas.jpg",
-                () {}
+             //   () {}
         ),
         image_senales(
             "assets/prohibicion/prohibido_fumar.png",
-                () {}
+             //   () {}
         ),
       ],
     );
@@ -46,11 +46,13 @@ class senales1 extends StatelessWidget{
       children: [
         image_senales(
             "assets/prohibicion/prohibido_no fotos.jpg",
-                () { }
+            // () { }
         ),
         image_senales(
             "assets/prohibicion/prohibido_solo_personal_autorizado.jpg",
-                () { })
+            //    () { }
+        //
+        ),
       ],
     );
 

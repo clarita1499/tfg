@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:untitled/login/bloc/AuthCubit.dart';
-import 'package:untitled/login/ui/screens/registrar.dart';
-import 'package:untitled/riesgos/ui/screens/bienvenida.dart';
-
-import '../../../Routes.dart';
+import 'package:untitled/User/ui/screens/registrar.dart';
+import '../../../riesgos/ui/screens/bienvenida.dart';
 import '../../../widgets/normal_button.dart';
-
+import '../../bloc/auth_cubit.dart';
+import 'package:flutterfire_ui/auth.dart';
 
 
 class login_screen extends StatefulWidget{
@@ -48,10 +46,10 @@ class _login_screen extends State <login_screen> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("Login page"),),
-        body: BlocBuilder<AuthCubit,AuthState>(
+        //body: BlocBuilder<AuthCubit,AuthState>(
           //buildWhen: (previous,current) => current is AuthtSignedIn,
-            builder: (_, state) {
-              return Form(
+            //builder: (_, state) {
+              body: Form(
                 key: _fromKey,
                 child: Container(
                   decoration: BoxDecoration(
@@ -70,7 +68,8 @@ class _login_screen extends State <login_screen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      if (state is AuthtSigningIn)
+                      /*
+                      if (state is AuthSigningIn)
                         const Center(child: CircularProgressIndicator()),
                       if (state is AuthError)
                         Text(
@@ -79,6 +78,8 @@ class _login_screen extends State <login_screen> {
                               color: Colors.red,
                               fontSize: 15),
                         ),
+
+                     */
                       Image.asset("assets/logo.png", height: 250),
                       txt_email,
                       const SizedBox(height: 3),
@@ -91,6 +92,10 @@ class _login_screen extends State <login_screen> {
                               context.read<AuthCubit>().signInWithEmailAndPassword(
                                   email_controler.text,
                                   pswd_controler.text);
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => bienvenida())
+                              );
+                              //Navigator.pushNamed(context, Routes.home);
                             }
                             },
                           imagePath: "assets/button/entrar.png"
@@ -99,13 +104,13 @@ class _login_screen extends State <login_screen> {
                        normal_button(
                            txt: "Entrar con gmail",
                            onPressed: () =>
-                               context.read<AuthCubit>().signInWithGoogle(),
+                             context.read<AuthCubit>().signInWithGoogle(),
                            imagePath: "assets/button/gmail.png"),
                       const SizedBox(height: 8),
                       normal_button(
                           txt: "Entrar como invitado",
                           onPressed: () =>
-                              context.read<AuthCubit>().signInAnonymusly(),
+                            context.read<AuthCubit>().signInAnonymously(),
                           imagePath: "assets/button/invitado.png"),
                       const SizedBox(height: 8),
                      link_register()
@@ -114,13 +119,15 @@ class _login_screen extends State <login_screen> {
                   //me falta poner por algun lado el circularprogess indicator
                   // if(isSigningIn) CircularProgressIndicator()
                 ),
+                     ),
+      ),
               );
             }
-        ),
-      ),
-    );
+       // ),
+     // ),
+   // );
     }
-  }
+  //}
 
 
   class link_register extends StatelessWidget{
