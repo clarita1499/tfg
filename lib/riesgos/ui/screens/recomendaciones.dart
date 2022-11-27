@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/gradientBack.dart';
+import '../../../util/gradientBack.dart';
 
 class recomendaciones extends StatelessWidget{
   @override

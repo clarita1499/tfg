@@ -1,5 +1,5 @@
 
-import 'package:untitled/riesgos/model/Consejo.dart';
+import 'package:untitled/modelos/Consejo.dart';
 
 MyConsejo myConsejo1 = MyConsejo(
     "01",

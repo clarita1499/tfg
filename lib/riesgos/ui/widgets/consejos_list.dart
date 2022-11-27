@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/model/Consejo.dart';
-import 'package:untitled/riesgos/ui/widgets/Consejo_view.dart';
+import 'package:untitled/modelos/Consejo.dart';
+import 'package:untitled/util/Consejo_view.dart';
 
 class consejos_list extends StatelessWidget {
 

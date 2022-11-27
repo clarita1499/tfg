@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/widgets/senales/senales1.dart';
-import 'package:untitled/riesgos/ui/widgets/senales/senales2.dart';
-import 'package:untitled/riesgos/ui/widgets/senales/senales3.dart';
-import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
-import 'package:untitled/riesgos/ui/widgets/senales/header_senales.dart';
-import 'package:untitled/riesgos/ui/widgets/senales/image_senales.dart';
+import 'package:untitled/riesgos/ui/screens/se%C3%B1ales_prohibicion.dart';
+import 'package:untitled/riesgos/ui/screens/senales_advertencia.dart';
+import 'package:untitled/riesgos/ui/screens/senales_incendio.dart';
+import 'package:untitled/riesgos/ui/screens/senales_salvamento.dart';
+import 'package:untitled/util/gradientBack.dart';
+
+import '../../../util/button_inkWell.dart';
 
 
 class senales extends StatelessWidget{
@@ -14,13 +15,41 @@ class senales extends StatelessWidget{
 
     return ListView(
         children: <Widget>[
-          header_senales(),
-          senales1(),
-          senales2(),
-          senales3(),
-    ],
+          gradientBack("Señales"),
+          button_inkWell(
+              button_txt: "1. Señales de prohibición",
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => senales_prohibicion()
+                  ),
+              ),
+          ),
+          button_inkWell(
+              button_txt: "2. Señales de salvamento",
+              onPressed: ()=> Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => senales_salvamento()
+                  ),
+              ),
+          ),
+          button_inkWell(
+              button_txt: "3. Señales de advertencia",
+              onPressed: () => Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => senales_advertencia()
+                ),
+              ),
+          ),
+          button_inkWell(
+              button_txt: "4. Señales contra incendio",
+              onPressed: () => Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => senales_incendio()
+                ),
+              ),
+          ),
+        ],
     );
-
   }
 }
 

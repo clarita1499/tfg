@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/widgets/button_inkWell.dart';
-import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
+import 'package:untitled/util/button_inkWell.dart';
+import 'package:untitled/util/gradientBack.dart';
 
-import '../../../widgets/Title_header.dart';
-import '../../../widgets/text_input.dart';
+import '../../../util/Title_header.dart';
+import '../../../util/text_input.dart';
 
 class anadir_consejo extends StatefulWidget {
 
@@ -40,7 +40,7 @@ class _anadir_consejo extends State<anadir_consejo> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white
               ),
-              "Añadir un consejo sobre los riesgos laborales en la Universidad,"
+              "Añade un consejo sobre los riesgos laborales en la Universidad,"
                   " ayudando así a mejorar el día a día de los demás usuarios"
           ),
           ),

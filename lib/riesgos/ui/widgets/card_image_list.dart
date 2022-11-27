@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/widgets/card_image.dart';
+import 'package:untitled/util/card_image.dart';
 
 class card_image_list extends StatelessWidget{
   @override
@@ -12,7 +12,7 @@ class card_image_list extends StatelessWidget{
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           card_image("assets/prohibicion/prohibido_animales.png)"),
-          card_image("assets/prohibicion/prohibido_apagar_agua.png"),
+          card_image("assets/prohibicion/agua.png"),
           card_image("assets/prohibicion/prohibido_encender_fuego.jpg"),
           card_image("assets/prohibicion/prohibido_fogatas.jpg"),
           card_image("assets/prohibicion/prohibido_fumar.png"),
@@ -59,7 +59,7 @@ class card_image_list extends StatelessWidget{
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           card_image("assets/prohibicion/prohibido_animales.png)"),
-          card_image("assets/prohibicion/prohibido_apagar_agua.png"),
+          card_image("assets/prohibicion/agua.png"),
           card_image("assets/prohibicion/prohibido_encender_fuego.jpg"),
           card_image("assets/prohibicion/prohibido_fogatas.jpg"),
           card_image("assets/prohibicion/prohibido_fumar.png"),

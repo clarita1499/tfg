@@ -2,9 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:untitled/User/bloc/auth_cubit.dart';
-import 'package:untitled/riesgos/ui/widgets/card_image.dart';
-import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
+import 'package:untitled/util/card_image.dart';
+import 'package:untitled/util/gradientBack.dart';
 import '../widgets/consejos_list.dart';
 import '../widgets/headerAppBar.dart';
 import '../widgets/review_list.dart';

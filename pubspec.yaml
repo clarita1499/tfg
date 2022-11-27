@@ -82,26 +82,49 @@ flutter:
   assets:
   - assets/logo.png
   - assets/prohibicion/prohibido_animales.png
-  - assets/prohibicion/prohibido_apagar_agua.png
   - assets/prohibicion/prohibido_encender_fuego.jpg
   - assets/prohibicion/prohibido_fogatas.jpg
+  - assets/prohibicion/no_peatones.png
+  - assets/prohibicion/personal_aut.png
   - assets/prohibicion/prohibido_fumar.png
-  - assets/prohibicion/prohibido_no fotos.jpg
+  - assets/prohibicion/prohibido_no_fotos.jpg
   - assets/prohibicion/prohibido_solo_personal_autorizado.jpg
+  - assets/estudiante.jpg
 
-  - assets/riesgo/aviso_escaleras.png
-  - assets/riesgo/aviso_general.png
-  - assets/riesgo/aviso_peligro.jpg
-  - assets/riesgo/riesgo_electrico.png
-  - assets/riesgo/riesgo_tropezar.jpg
-  - assets/riesgo/suelo_resbaladizo.jpg
-  - assets/riesgo/sustancias_inflamables.png
+  - assets/incendio/avisador_sonoro.png
+  - assets/incendio/direccion_arriba.png
+  - assets/incendio/direccion_da.png
+  - assets/incendio/direccion_derecha.png
+  - assets/incendio/extintor.png
+  - assets/incendio/mangera.png
+  - assets/incendio/pulsador_alarma.png
+  - assets/incendio/telefono_incendio.png
+
+
+  - assets/advertencia/aviso_escaleras.png
+  - assets/advertencia/aviso_general.png
+  - assets/advertencia/aviso_peligro.jpg
+  - assets/advertencia/riesgo_electrico.png
+  - assets/advertencia/riesgo_tropezar.png
+  - assets/advertencia/suelo_resbaladizo.png
+  - assets/advertencia/sustancias_inflamables.png
+  - assets/advertencia/riesgo_explosion.png
+  - assets/advertencia/materias_radiactivas.png
+
+
+
+  - assets/prohibicion/no_tocar.png
+  - assets/prohibicion/agua_potable.png
 
   - assets/salvamento/aviso_extintor.jpg
+  - assets/salvamento/auxilios.png
+  - assets/salvamento/dea.png
+  - assets/salvamento/empujar.png
+  - assets/salvamento/punto_encuentro.png
+  - assets/salvamento/salida_emergencia.png
   - assets/salvamento/escalera_emergencia.png
-  - assets/salvamento/salida_emergencia.jpg
+  - assets/salvamento/seguir.png
   - assets/salvamento/salida_exit.jpg
-  - assets/salvamento/señal_baños.jpg
 
   - assets/education.svg
   - assets/fondo.svg
@@ -110,6 +133,7 @@ flutter:
   - assets/button/invitado.png
   - assets/poli.jpeg
   - assets/exteriores.jpg
+  - assets/prohibicion/prohibido.png
 
   #   - images/a_dot_ham.jpeg
 

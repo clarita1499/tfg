@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/widgets/gradientBack.dart';
+import 'package:untitled/util/gradientBack.dart';
 
 class consultarRL extends StatelessWidget {
   int type;
