@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:untitled/util/button_inkWell.dart';
-import 'package:untitled/util/gradientBack.dart';
+import 'package:untitled/ui/util/button_inkWell.dart';
+import 'package:untitled/ui/util/gradientBack.dart';
 
 import '../../../util/Title_header.dart';
 import '../../../util/text_input.dart';

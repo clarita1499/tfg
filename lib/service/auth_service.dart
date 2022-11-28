@@ -23,9 +23,21 @@ class AuthService {
     return _auth.currentUser!.uid;
   }
 
+  loginAnonymously() async {
+    try {
+      return await _auth.signInAnonymously();
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        default:
+          print("{Error : $e}");
+      }
+    }
+  }
+
+
   loginWithEmailAndPassword(String email, String password) async {
-    return await _auth.signInWithEmailAndPassword(
-        email: email, password: password);
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
   }
 
 
@@ -62,7 +74,7 @@ class AuthService {
     }
   }
 
-  signOut() {
+  signOut() async {
     FirebaseAuth.instance.signOut();
   }
 }

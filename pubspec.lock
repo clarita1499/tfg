@@ -434,13 +434,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
-  generic_bloc_provider:
-    dependency: "direct main"
-    description:
-      name: generic_bloc_provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.1"
   get_it:
     dependency: "direct main"
     description:

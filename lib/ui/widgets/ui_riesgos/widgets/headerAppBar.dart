@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:untitled/util/card_image.dart';
-import 'package:untitled/util/gradientBack.dart';
+import 'package:untitled/ui/util/card_image.dart';
+import 'package:untitled/ui/util/gradientBack.dart';
 
 import 'card_image_list.dart';
 

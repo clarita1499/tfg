@@ -1,13 +1,18 @@
 
 
 
+import 'dart:ffi';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/modelos/User.dart';
 import 'package:untitled/service/auth_service.dart';
 import 'package:untitled/service/user_service.dart';
-import 'package:untitled/util/button_inkWell.dart';
+import 'package:untitled/ui//util/button_inkWell.dart';
+import 'package:untitled/navigation/Navigation.dart';
+import '../util/snackbar_util.dart';
 import 'login.dart';
 
 class SignUp extends StatefulWidget{
@@ -25,18 +30,47 @@ class _signup_screen extends State <SignUp> {
   final pswd_controler = new TextEditingController();
   final pswd2_controler = new TextEditingController();
 
+  final authService = AuthService();
+
   DateTime date = DateTime(2022,12,24);
 
 
   String ? emailValidator(String? value){
   return (value == null || value.isEmpty) ? 'Este campo es obligatorio' : null;
 }
-  String ? pswdValidator(String? value){
+  String? pswdValidator(String? value){
     if (value == null || value.isEmpty) return 'Este campo es obligatorio';
-    if(value.length <6) return "La contraseña debe más de 6 carácteres";
+    if(value.length <6) return "La contraseña debe tener más de 6 carácteres";
     if (pswd_controler.text != pswd2_controler.text) return "Las contraseñas deben coincidir";
     return null;
   }
+
+  signUpClick(BuildContext context) async {
+    print('Register function');
+      try {
+        String name = name_controler.text;
+        String email = email_controler.text.toLowerCase();
+        String password = pswd_controler.text;
+
+        final userCredential = await authService.registerUserWithEmailAndPassword(
+            name,
+            email,
+            password
+        );
+
+        print('user credential: ${userCredential}');
+        if (userCredential != null) {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => Navigation()));
+        }else{
+          SnackBarUtil.showWarningSnackBar('Error en la creación', context);
+        }
+
+      } on FirebaseAuthException catch (e) {
+        print('firebase exception: ${e.message}');
+        SnackBarUtil.showWarningSnackBar('Error ${e.message}', context);
+      }
+    }
 
   Widget build(BuildContext context) {
 
@@ -57,51 +91,38 @@ class _signup_screen extends State <SignUp> {
 
     final txtEmail = TextFormField(
       controller: email_controler,
+      validator: emailValidator,
       decoration: const InputDecoration(
           hintText: 'usuario@correo.com'
       ),
-      validator: emailValidator,
     );
 
     final txtPswd = TextFormField(
       controller: pswd_controler,
       obscureText: true,
+      validator: pswdValidator,
       decoration: const InputDecoration(
           hintText: 'contraseña'
       ),
-      validator: pswdValidator,
     );
 
     final txt2Pswd = TextFormField(
       controller: pswd2_controler,
       obscureText: true,
+      validator: pswdValidator,
       decoration: const InputDecoration(
           hintText: 'Repite contraseña'
       ),
-      validator: pswdValidator,
+
     );
 
 
     final buttonLognUp = button_inkWell(
         button_txt: "Registrar",
         onPressed: () {
-          if (_formKey.currentState?.validate()==true){
-            print("Vamos a añadirlo, ${MyUser}");
-            /*
-            AuthService.create...()
-            if (isCreated) {
-             return un dialogo con q ha sido creado correctamente
-             */
-            /*await UserService().add(MyUser(
-              name_controler.text,
-              lastName_controler.text,
-              email_controler.text,
-            )
-            );
-
-             */
+            signUpClick(context);
           }
-        });
+        );
 
         return Scaffold(
           appBar: AppBar(title: Text("Registro"),),
@@ -118,7 +139,6 @@ class _signup_screen extends State <SignUp> {
                SizedBox(height: 8),
                txt2Pswd,
                SizedBox(height: 8),
-               //DatePicker(),
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
@@ -175,6 +195,7 @@ class _DatePicker extends State<DatePicker>{
   }
 
 }
+
 
 
 

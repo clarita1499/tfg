@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/screens/se%C3%B1ales_prohibicion.dart';
-import 'package:untitled/riesgos/ui/screens/senales_advertencia.dart';
-import 'package:untitled/riesgos/ui/screens/senales_incendio.dart';
-import 'package:untitled/riesgos/ui/screens/senales_salvamento.dart';
-import 'package:untitled/util/gradientBack.dart';
+import 'package:untitled/ui/widgets/ui_riesgos//screens/se%C3%B1ales_prohibicion.dart';
+import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_advertencia.dart';
+import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_incendio.dart';
+import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_salvamento.dart';
+import 'package:untitled/ui/util/gradientBack.dart';
 
 import '../../../util/button_inkWell.dart';
 

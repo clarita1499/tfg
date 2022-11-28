@@ -6,9 +6,9 @@ import 'package:equatable/equatable.dart';
 import 'package:untitled/modelos/Riesgo.dart';
 
 class MyUser  {
-  final String name;
-  final String lastname;
-  final String email;
+  final String? name;
+  final String? lastname;
+  final String? email;
   final String? image;
   final String? work;
   final String? university;

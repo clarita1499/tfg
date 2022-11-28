@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/screens/senales.dart';
+import 'package:untitled/ui/widgets/ui_riesgos/screens/senales.dart';
 
 class card_image extends StatelessWidget{
   String pathImage = "assets/img/beach.jpeg";

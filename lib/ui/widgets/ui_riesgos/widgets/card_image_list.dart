@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/util/card_image.dart';
+import 'package:untitled/ui/util/card_image.dart';
 
 class card_image_list extends StatelessWidget{
   @override

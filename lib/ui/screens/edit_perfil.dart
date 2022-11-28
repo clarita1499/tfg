@@ -1,10 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/util/button_inkWell.dart';
-import 'package:untitled/screens/perfil.dart';
-import 'package:untitled/widgets/lista_desplegables.dart';
-import 'package:untitled/util/normal_button.dart';
+import 'package:untitled/ui/util/button_inkWell.dart';
+import 'package:untitled/ui/screens/perfil.dart';
+import 'package:untitled/ui/widgets/lista_desplegables.dart';
+import 'package:untitled/ui/util/normal_button.dart';
 
 class edit_perfil extends StatelessWidget{
 

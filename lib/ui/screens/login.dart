@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/navigation/Navigation.dart';
-import 'package:untitled/screens/sign_up.dart';
-import '../riesgos/ui/screens/bienvenida.dart';
-import '../service/auth_service.dart';
+import 'package:untitled/ui/screens/sign_up.dart';
+import '../widgets/ui_riesgos//screens/bienvenida.dart';
+import 'package:untitled/service/auth_service.dart';
 import '../util/snackbar_util.dart';
 import '../util/normal_button.dart';
 import 'package:flutterfire_ui/auth.dart';
@@ -36,6 +35,7 @@ class _login_screen extends State <Login> {
   login_gmail_click (BuildContext context) async {
     try{
       final userCredential = await authService.signInWithGoogle();
+      SnackBarUtil.showSnackBar("Bienvenid@ usuario desde gmail" , context);
       print('user credential GMAIL: ${userCredential}');
       if (userCredential != null) {
         Navigator.push(context, MaterialPageRoute(
@@ -60,6 +60,7 @@ class _login_screen extends State <Login> {
         String password = pswd_controler.text;
         final userCredential =
             await authService.loginWithEmailAndPassword(email, password);
+        SnackBarUtil.showSnackBar("Bienvenid@ ${email}" , context);
         print('user credential: ${userCredential}');
         if (userCredential != null) {
           Navigator.push(context, MaterialPageRoute(
@@ -75,6 +76,16 @@ class _login_screen extends State <Login> {
     }
   }
 
+  loginAnonymously(BuildContext context) async{
+    try {
+      await authService.loginAnonymously();
+      SnackBarUtil.showSnackBar("Registrado como invitado",context);
+      Navigator.push(context, MaterialPageRoute(
+          builder: (context) => Navigation()));
+    } on FirebaseAuthException catch (e) {
+      SnackBarUtil.showWarningSnackBar("Error al intenar entrar como invitado", context);
+      }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +146,9 @@ class _login_screen extends State <Login> {
               const SizedBox(height: 8),
               normal_button(
                 txt: 'Entrar como invitado',
-                onPressed: () => {},
+                onPressed: ()  {
+                  loginAnonymously(context);
+                },
                 imagePath: "assets/button/invitado.png"),
               const SizedBox(height: 8),
               link_register(),

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:untitled/util/gradientBack.dart';
+import 'package:untitled/ui/util/gradientBack.dart';
 
-import '../modelos/User.dart';
+import 'package:untitled/modelos/User.dart';
 
 
 class user_info extends StatelessWidget {

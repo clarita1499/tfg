@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
 import 'text_input.dart';
-import '../modelos/Consejo.dart';
+import 'package:untitled/modelos/Consejo.dart';
 import 'button_inkWell.dart';
 
 class Consejo_view extends StatelessWidget {

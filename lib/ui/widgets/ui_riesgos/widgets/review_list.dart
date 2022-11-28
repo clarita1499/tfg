@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/riesgos/ui/widgets/Review_view.dart';
+import 'package:untitled/ui/widgets/ui_riesgos/widgets/Review_view.dart';
 
 
 class review_list extends StatelessWidget {
