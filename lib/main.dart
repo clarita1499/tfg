@@ -5,12 +5,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/ui/screens/login.dart';
-import 'package:untitled/ui/widgets/ui_riesgos//screens/bienvenida.dart';
+import 'package:untitled/ui/screens/bienvenida.dart';
 import 'package:untitled/navigation/Navigation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:untitled/service/auth_service.dart';
 
-import 'service/firebase_options.dart';
+import 'firebase_options.dart';
 
 
 

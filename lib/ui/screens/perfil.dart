@@ -1,6 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/service/user_service.dart';
 import 'package:untitled/ui/util/gradientBack.dart';
 
 import 'package:untitled/ui/util/normal_button.dart';
@@ -22,6 +23,8 @@ class perfil_screen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final authService = AuthService();
+    final userService = UserService();
+
 
 
     // return Text("hola");
@@ -34,17 +37,20 @@ class perfil_screen extends StatelessWidget {
     );
 
     return Scaffold(
-      body: ListView(
+      body: Center(
+        child: ListView(
             children: [
               header,
               button_bar(),
               description_txt("Nombre:", "{}"),
               description_txt("Apellidos:", "{}"),
               description_txt("Email:", "{}"),
-              description_txt("Años:", "{}"),
               description_txt("Puesto de trabajo:", "{}"),
+              description_txt("Provincia:", "{}"),
+              description_txt("Centro de trabajo:", "{}"),
         ]
         ),
+      ),
     );
   }
 }

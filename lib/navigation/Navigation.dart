@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/ui/widgets/ui_riesgos/screens/Anadir.dart';
-import 'package:untitled/ui/widgets/ui_riesgos/screens/bienvenida.dart';
+import 'package:untitled/ui/screens/Anadir.dart';
+import 'package:untitled/ui/screens/bienvenida.dart';
 import 'package:untitled/ui/widgets/ui_riesgos/screens/consultaRL.dart';
 import 'package:untitled/ui/widgets/ui_riesgos/screens/recomendaciones.dart';
 
-import '../ui/widgets/ui_riesgos/screens/senales.dart';
+import '../ui/screens/senales.dart';
 import '../ui/screens/perfil.dart';
 
 class Navigation extends StatefulWidget {

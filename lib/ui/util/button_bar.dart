@@ -23,19 +23,19 @@ class button_bar extends StatelessWidget{
       child: Row(
         children: <Widget>[
           //cambiar la contraseña
-          circle_button(true, Icons.vpn_key,20.0, Color.fromRGBO(255,255,255,0.6)
+          circle_button(true, Icons.vpn_key,30.0, Color.fromRGBO(255,255,255,0.6)
               , onPressed: () {}),
           //cambiar los datos
-          circle_button(false, Icons.person_add, 40.0, Color.fromARGB(255,255,255,3)
+          circle_button(false, Icons.person_add, 40.0, Colors.amber
               ,onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(
+                Navigator.push(context, MaterialPageRoute(
                     builder: (context) => new edit_perfil()),);
               }),
           //cerrar de la sesión
-          circle_button(true, Icons.exit_to_app, 20.0, Color.fromRGBO(255, 255, 255, 0.6),
+          circle_button(true, Icons.exit_to_app, 30.0, Color.fromRGBO(255, 255, 255, 0.6),
               onPressed: () {
             _authService.signOut();
-                Navigator.push(context, new MaterialPageRoute(
+                Navigator.push(context, MaterialPageRoute(
                     builder: (context) => new Login()),);
               }
               ),

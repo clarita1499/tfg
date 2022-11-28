@@ -3,16 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:untitled/ui/util/button_inkWell.dart';
 import 'package:untitled/ui/util/gradientBack.dart';
-
-import '../../../util/Title_header.dart';
-import '../../../util/text_input.dart';
+import '../util/text_input.dart';
 
 class anadir_consejo extends StatefulWidget {
 
-  File? image;
-
-  anadir_consejo({this.image});
-
+  anadir_consejo();
 
   @override
   State createState() {
@@ -21,11 +16,43 @@ class anadir_consejo extends StatefulWidget {
 }
 
 class _anadir_consejo extends State<anadir_consejo> {
+
+
+  final _controllerTitle = TextEditingController();
+  final _controllerDescription = TextEditingController();
+
+  addConsejo(BuildContext context) async {
+    print('Añadiendo consejo..');
+    /*
+    try {
+      String title = _controllerTitle.text;
+      String descript = _controllerDescription.text;
+
+      final userCredential = await authService.registerUserWithEmailAndPassword(
+          name,
+          email,
+          password
+      );
+
+
+      if (userCredential != null) {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => Navigation()));
+      }else{
+        SnackBarUtil.showWarningSnackBar('Error en la creación', context);
+      }
+
+    } on FirebaseException catch (e) {
+      print('firebase exception: ${e.message}');
+      SnackBarUtil.showWarningSnackBar('Error ${e.message}', context);
+    }
+
+       */
+  }
+
   @override
   Widget build(BuildContext context) {
 
-    final _controllerTitlePlace = TextEditingController();
-    final _controllerDescriptionPlace = TextEditingController();
     // TODO: implement build
     return Scaffold(
       body: Stack(
@@ -33,7 +60,7 @@ class _anadir_consejo extends State<anadir_consejo> {
           gradientBack("Añadir consejo"),
           Container(
             margin: EdgeInsets.only(top: 130.0, bottom:20.0, left: 20.0, right: 20.0),
-            child: Text(
+            child: const Text(
               style: TextStyle(
                   fontSize: 16.0,
                   fontFamily: "Font",
@@ -44,26 +71,6 @@ class _anadir_consejo extends State<anadir_consejo> {
                   " ayudando así a mejorar el día a día de los demás usuarios"
           ),
           ),
-          /*
-          Row(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(top: 25.0, left: 275.0),
-                child: SizedBox(
-                  height: 45.0,
-                  width: 45.0,
-                  child: IconButton(
-                      icon: Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 45,),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-           */
                   Container(
                   margin: EdgeInsets.only(top: 300.0, bottom:20.0),
                     child: ListView(
@@ -74,28 +81,24 @@ class _anadir_consejo extends State<anadir_consejo> {
                             hintText: "Title",
                             inputType: TextInputType.text,
                             maxLines: 1,
-                            controller: _controllerTitlePlace,
+                            controller: _controllerTitle,
                           ),
                         ),
                         TextInput(//Description
                           hintText: "Description",
                           inputType: TextInputType.multiline,
                           maxLines: 4,
-                          controller: _controllerDescriptionPlace,
+                          controller: _controllerDescription,
                         ),
                         Container(
                           width: 70.0,
                           child: button_inkWell(
                             button_txt: "Añadir consejo",
-                            onPressed: (
-                            //subir el consejo al Firebase Storage
-                                //devuelve una url de la imagen
-                                //Cloud Firestore ->
-                                //guardo el consejo - titulo, descripcion, owner, like
-                            ) {}
-                          ),
-
-                        )
+                            onPressed: () {
+                              addConsejo(context);
+                            }
+                            ),
+                        ),
                       ],
                     ),
                   ),

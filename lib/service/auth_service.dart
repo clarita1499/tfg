@@ -11,14 +11,27 @@ class AuthService {
   final _userService = UserService();
 
   Future<UserCredential> registerUserWithEmailAndPassword(
-      String name, String email, String password) async {
-    return await _auth.createUserWithEmailAndPassword(
+      String name,
+      String email,
+      String password) async {
+    try {
+     UserCredential user;
+     user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
+
+    if (_auth.currentUser != null) {
+      var firebaseUser = MyUser(name, '', email);
+      await _userService.add(name, firebaseUser);
+      print("Añadidos los campos correctamente..");
+    }
+     return user;
+    } catch (ex) {
+      print('error login with user and password: $ex');
+      rethrow;
+    }
   }
 
-  /*****************************************************************************
-   *                              GET CURRENT ID                                *
-   ******************************************************************************/
+
   String getCurrentId() {
     return _auth.currentUser!.uid;
   }

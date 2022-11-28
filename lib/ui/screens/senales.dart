@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/ui/widgets/ui_riesgos//screens/se%C3%B1ales_prohibicion.dart';
-import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_advertencia.dart';
-import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_incendio.dart';
-import 'package:untitled/ui/widgets/ui_riesgos//screens/senales_salvamento.dart';
+import 'package:untitled/ui/screens/Se%C3%B1ales/se%C3%B1ales_prohibicion.dart';
+import 'package:untitled/ui/screens/señales/senales_advertencia.dart';
+import 'package:untitled/ui/screens/Se%C3%B1ales/senales_incendio.dart';
+import 'package:untitled/ui/screens/Se%C3%B1ales/senales_salvamento.dart';
 import 'package:untitled/ui/util/gradientBack.dart';
-
-import '../../../util/button_inkWell.dart';
+import '../util/button_inkWell.dart';
 
 
 class senales extends StatelessWidget{

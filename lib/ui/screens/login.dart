@@ -1,13 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/navigation/Navigation.dart';
 import 'package:untitled/ui/screens/sign_up.dart';
-import '../widgets/ui_riesgos//screens/bienvenida.dart';
 import 'package:untitled/service/auth_service.dart';
 import '../util/snackbar_util.dart';
 import '../util/normal_button.dart';
-import 'package:flutterfire_ui/auth.dart';
 
 
 class Login extends StatefulWidget{
@@ -46,7 +43,7 @@ class _login_screen extends State <Login> {
       }
     }on Exception catch(ex){
       print('firebase exception: ${ex}');
-      SnackBarUtil.showSnackBar('Error ${ex}', context);
+      SnackBarUtil.showWarningSnackBar('Error ${ex}', context);
     }
 
   }
@@ -66,7 +63,7 @@ class _login_screen extends State <Login> {
           Navigator.push(context, MaterialPageRoute(
               builder: (context) => Navigation()));
         }else{
-          SnackBarUtil.showSnackBar('Error en la autenticación', context);
+          SnackBarUtil.showWarningSnackBar('Error en la autenticación', context);
         }
 
       } on FirebaseAuthException catch (e) {
